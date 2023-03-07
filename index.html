@@ -9,6 +9,7 @@
         align-items: center;
         height: 100vh;
         margin: 0;
+        transition: background-color 0.3s ease;
       }
       .search-form {
         display: flex;
@@ -65,11 +66,31 @@
       .dark-mode-toggle:hover {
         background-color: #005F6B;
       }
+      .dark-mode {
+        background-color: #333;
+      }
+      .dark-mode .search-form {
+        background-color: #444;
+      }
+      .dark-mode label {
+        color: #fff;
+      }
+      .dark-mode input[type="text"] {
+        background-color: #444;
+        color: #fff;
+      }
+      .dark-mode button[type="submit"] {
+        background-color: #005F6B;
+      }
       .dark-mode-toggle.dark {
-        background-color: #363636;
+        background-color: #f2f2f2;
+        color: #333;
       }
       .dark-mode-toggle.dark:hover {
-        background-color: #555555;
+        background-color: #ccc;
+      }
+      .dark-mode-toggle.dark i {
+        transform: rotate(180deg);
       }
     </style>
   </head>
@@ -78,18 +99,4 @@
       <label for="search-input">Search:</label>
       <input type="text" id="search-input" name="search-term" placeholder="Enter search term...">
       <button type="submit">Search</button>
-    </form>
-    <button class="dark-mode-toggle" id="dark-mode-toggle" onclick="toggleDarkMode()">
-      <i class="fas fa-moon"></i>
-    </button>
-    <script src="https://kit.fontawesome.com/1234567890.js" crossorigin="anonymous"></script>
-    <script>
-      function toggleDarkMode() {
-        var body = document.body;
-        var darkModeToggle = document.getElementById("dark-mode-toggle");
-        body.classList.toggle("dark-mode");
-        darkModeToggle.classList.toggle("dark");
-      }
-    </script>
-  </body>
-</html>
+   
